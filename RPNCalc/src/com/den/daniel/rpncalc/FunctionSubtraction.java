@@ -14,7 +14,7 @@ public class FunctionSubtraction extends Function {
 	@Override
 	protected ArrayList<Double> operate(ArrayList<Double> args) {
 		ArrayList<Double> result = new ArrayList<Double>();
-		result.add(args.get(0) - args.get(1));
+		result.add(args.get(1) - args.get(0));
 		return result;
 	}
 
