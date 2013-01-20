@@ -4,3 +4,13 @@
 *.jar
 *.war
 *.ear
+*.apk
+*.ap_
+*.dex
+
+# generated files
+bin/
+gen/
+
+# local configuration files
+local.properties
