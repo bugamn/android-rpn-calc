@@ -26,7 +26,10 @@ public class Calculator extends Activity {
     }
 
     private void loadFunctions() {
-		functionsMap.put(R.id.buttonPlus, new FunctionAdition(stack, getResources()));
+		functionsMap.put(R.id.buttonPlus, new FunctionAddition(stack, getResources()));
+		functionsMap.put(R.id.buttonMinus, new FunctionSubtraction(stack, getResources()));
+		functionsMap.put(R.id.buttonMultiply, new FunctionMultiplication(stack, getResources()));
+		functionsMap.put(R.id.buttonDivide, new FunctionDivision(stack, getResources()));
 	}
 
 	@Override
@@ -99,6 +102,7 @@ public class Calculator extends Activity {
 				textView.setText("");
 				stack.push(temp);
 			} catch (NumberFormatException e) {
+				// TODO move to strings.xml
 				textView.setText(errorPrefix + "Invalid Entry");
 				return;
 			}
@@ -106,7 +110,12 @@ public class Calculator extends Activity {
 		if (function == null) {
 			throw new Error("Olhe-me!");
 		}
-		function.work();
+		try {
+			function.work();
+		} catch (IllegalArgumentException e) {
+			// TODO move string to here
+			textView.setText(errorPrefix + e.getMessage());
+		}
 		updateScreen();
 	}
 }

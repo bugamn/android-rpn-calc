@@ -32,7 +32,7 @@ public abstract class Function {
 		return args;
 	}
 	
-	public void work() {
+	public void work() throws IllegalArgumentException {
 		ArrayList<Double> args = popArgs();
 		ArrayList<Double> result;
 		

@@ -5,16 +5,16 @@ import java.util.Stack;
 
 import android.content.res.Resources;
 
-public class FunctionAdition extends Function {
+public class FunctionMultiplication extends Function {
 
-	public FunctionAdition(Stack<Double> stack, Resources resources) {
+	public FunctionMultiplication(Stack<Double> stack, Resources resources) {
 		super(stack, resources, 2);
 	}
 
 	@Override
 	protected ArrayList<Double> operate(ArrayList<Double> args) {
 		ArrayList<Double> result = new ArrayList<Double>();
-		result.add(args.get(0) + args.get(1));
+		result.add(args.get(0) * args.get(1));
 		return result;
 	}
 
