@@ -199,6 +199,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="runFunction"
                 android:text="@string/buttonDup" />
 
             <Button
@@ -206,6 +207,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="runFunction"
                 android:text="@string/buttonSwap" />
 
             <Button
@@ -213,6 +215,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="pop"
                 android:text="@string/buttonPop" />
 
             <Button
@@ -220,6 +223,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="clear"
                 android:text="@string/buttonClear" />
 
         </LinearLayout>

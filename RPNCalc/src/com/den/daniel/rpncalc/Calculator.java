@@ -5,8 +5,10 @@ import java.util.Stack;
 
 import com.den.daniel.rpncalc.functions.FunctionAddition;
 import com.den.daniel.rpncalc.functions.FunctionDivision;
+import com.den.daniel.rpncalc.functions.FunctionDuplicate;
 import com.den.daniel.rpncalc.functions.FunctionMultiplication;
 import com.den.daniel.rpncalc.functions.FunctionSubtraction;
+import com.den.daniel.rpncalc.functions.FunctionSwap;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -28,6 +30,7 @@ public class Calculator extends Activity {
         functionsMap = new HashMap<Integer, Function>();
         
         loadFunctions();
+        updateScreen();
     }
 
     private void loadFunctions() {
@@ -35,6 +38,8 @@ public class Calculator extends Activity {
 		functionsMap.put(R.id.buttonMinus, new FunctionSubtraction(stack, getResources()));
 		functionsMap.put(R.id.buttonMultiply, new FunctionMultiplication(stack, getResources()));
 		functionsMap.put(R.id.buttonDivide, new FunctionDivision(stack, getResources()));
+		functionsMap.put(R.id.buttonDup, new FunctionDuplicate(stack, getResources()));
+		functionsMap.put(R.id.buttonSwap, new FunctionSwap(stack, getResources()));
 	}
 
 	@Override
@@ -58,8 +63,12 @@ public class Calculator extends Activity {
     private void updateScreen() {
 		TextView display = (TextView) findViewById(R.id.display);
 		display.setText("");
-    	for (int i = 0; i < stack.size(); i++) {
-    		display.append(String.valueOf(i) + ":" + stack.get(stack.size() - (i+1)) + "\n");
+		if (stack.size() == 0) {
+			display.setText("0:--");
+		} else {
+	    	for (int i = 0; i < stack.size(); i++) {
+	    		display.append(String.valueOf(i) + ":" + stack.get(stack.size() - (i+1)) + "\n");
+			}
 		}
     }
     
@@ -122,5 +131,17 @@ public class Calculator extends Activity {
 			textView.setText(errorPrefix + e.getMessage());
 		}
 		updateScreen();
+	}
+    
+    public void pop(View view) {
+		if (stack.size() > 0) {
+			stack.pop();
+			updateScreen();
+		}
+	}
+    
+    public void clear(View view) {
+		TextView textView = (TextView) findViewById(R.id.textView1);
+		textView.setText("");
 	}
 }
