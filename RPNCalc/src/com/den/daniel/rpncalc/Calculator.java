@@ -3,6 +3,11 @@ package com.den.daniel.rpncalc;
 import java.util.HashMap;
 import java.util.Stack;
 
+import com.den.daniel.rpncalc.functions.FunctionAddition;
+import com.den.daniel.rpncalc.functions.FunctionDivision;
+import com.den.daniel.rpncalc.functions.FunctionMultiplication;
+import com.den.daniel.rpncalc.functions.FunctionSubtraction;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;

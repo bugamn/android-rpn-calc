@@ -1,7 +1,9 @@
-package com.den.daniel.rpncalc;
+package com.den.daniel.rpncalc.functions;
 
 import java.util.ArrayList;
 import java.util.Stack;
+
+import com.den.daniel.rpncalc.Function;
 
 import android.content.res.Resources;
 
