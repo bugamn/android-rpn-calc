@@ -21,5 +21,9 @@
     <string name="buttonMultiply">*</string>
     <string name="buttonDivide">/</string>
     <string name="fewArgError">Not enough arguments for function</string>
+    <string name="buttonDup">Dup</string>
+    <string name="buttonSwap">Swap</string>
+    <string name="buttonPop">Pop</string>
+    <string name="buttonClear">Clear</string>
 
 </resources>
